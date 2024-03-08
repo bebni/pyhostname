@@ -4,8 +4,8 @@ from OpenSSL import SSL
 app = Flask(__name__)
 
 # Define SSL certificate and key file paths 
-CERT_FILE = "D:\certificate" 
-KEY_FILE = "D:\certificate" 
+CERT_FILE = "D:/certificate" 
+KEY_FILE = "D:/certificate"
 
 # Create SSL context 
 context = SSL.Context(SSL.PROTOCOL_TLSv1_2) 
