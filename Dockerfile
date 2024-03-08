@@ -6,6 +6,7 @@ ENV FLASK_RUN_HOST=0.0.0.0
 RUN apk add --no-cache gcc musl-dev linux-headers
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
+RUN pip install --upgrade cffi==1.14.0
 RUN pip3 install pyopenssl
 EXPOSE 5000
 COPY . .
