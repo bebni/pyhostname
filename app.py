@@ -1,5 +1,5 @@
 from flask import Flask, make_response, send_file
-from pyOpenSSL import SSL
+from OpenSSL import SSL
 
 
 # Define SSL certificate and key file paths 
