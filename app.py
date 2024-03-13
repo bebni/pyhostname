@@ -8,7 +8,8 @@ KEY_FILE = "/root/hostnamescript/pyhostname/certificate/cx-server/key.pem"
 
 # Create SSL context
 #import ssl context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
-context = SSL.Context(SSL.PROTOCOL_TLSv1_2)
+context = SSL.Context(OpenSSL.SSL.SSLv23_METHOD)
+#context.use_certificate_file('server.crt')
 context.load_cert_chain(CERT_FILE, KEY_FILE)
 
 
