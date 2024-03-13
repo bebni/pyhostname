@@ -1,6 +1,5 @@
 from flask import Flask, make_response, send_file
-#from OpenSSL import SSL
-import ssl
+from OpenSSL import SSL
 
 
 # Define SSL certificate and key file paths 
@@ -8,15 +7,11 @@ CERT_FILE = "/root/hostnamescript/pyhostname/certificate/cx-server/cert.pem"
 KEY_FILE = "/root/hostnamescript/pyhostname/certificate/cx-server/key.pem"
 
 # Create SSL context
-
-context = ssl.SSLContext()
 #import ssl context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
-#context = SSL.Context(SSL.PROTOCOL_TLSv1_2)
+context = SSL.Context(SSL.PROTOCOL_TLSv1_2)
 context.load_cert_chain(CERT_FILE, KEY_FILE)
 
 app = Flask(__name__)
-if __name__ == "__main__":
-    app.run(context)
 
 @app.route('/CxRestAPI/system/version')
 def version():
