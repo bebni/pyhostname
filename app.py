@@ -14,8 +14,8 @@ context = ssl.SSLContext()
 context.load_cert_chain(CERT_FILE, KEY_FILE)
 
 app = Flask(__name__)
-app.run(…, ssl_context=context)
-#app.run(ssl_context='adhoc')
+if __name__ == "__main__":
+    app.run(context)
 
 @app.route('/CxRestAPI/system/version')
 def version():
