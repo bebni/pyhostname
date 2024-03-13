@@ -9,6 +9,7 @@ COPY requirements.txt requirements.txt
 #RUN yum -y install gcc
 #RUN yum install gcc
 RUN pip install -r requirements.txt
+RUN pip install pyOpenSSL --upgrade
 EXPOSE 5000
 COPY . .
 HEALTHCHECK NONE
