@@ -11,7 +11,7 @@ KEY_FILE = "/root/hostnamescript/pyhostname/certificate/cx-server/key.pem"
 context = SSL.Context(SSL.PROTOCOL_TLSv1_2)
 context.load_cert_chain(CERT_FILE, KEY_FILE)
 
-app = Flask(__name__)
+
 
 @app.route('/CxRestAPI/system/version')
 def version():
