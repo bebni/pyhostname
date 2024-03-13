@@ -1,4 +1,4 @@
 flask==2.2.1 
 six
-cryptography
-pyopenssl
+cryptography==3.3.2
+pyopenssl==22.0.0
