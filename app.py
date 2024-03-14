@@ -1,17 +1,41 @@
 from flask import Flask, make_response, send_file
-from OpenSSL import SSL
+#from OpenSSL import SSL
 
 
 # Define SSL certificate and key file paths 
-CERT_FILE = "/root/hostnamescript/pyhostname/certificate/cx-server/cert.pem" 
-KEY_FILE = "/root/hostnamescript/pyhostname/certificate/cx-server/key.pem"
+#CERT_FILE = "/root/hostnamescript/pyhostname/certificate/cx-server/cert.pem" 
+#KEY_FILE = "/root/hostnamescript/pyhostname/certificate/cx-server/key.pem"
+CERT_FILE = "./certificate/server_chain.pem" 
+KEY_FILE = "./certificate/server.key"
 
 # Create SSL context
 #import ssl context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
-context = SSL.Context(OpenSSL.SSL.SSLv23_METHOD)
+#context = SSL.Context(OpenSSL.SSL.SSLv23_METHOD)
 #context.use_certificate_file('server.crt')
-context.load_cert_chain(CERT_FILE, KEY_FILE)
+#context.load_cert_chain(CERT_FILE, KEY_FILE)
 
+context = (CERT_FILE, KEY_FILE)
+
+app = Flask(__name__)
+
+
+@app.route('/')
+def index():
+    return 'Flask is running!'
+
+
+@app.route('/data')
+def names():
+    data = {"names": ["John", "Jacob", "Julie", "Jennifer"]}
+    return jsonify(data)
+
+
+#if __name__ == '__main__':
+#    app.run()
+if __name__ == '__main__':  
+    #  app.run(host='127.0.0.1', debug=True, ssl_context=context)
+    app.run('0.0.0.0', debug=True, port=8100, ssl_context=context)
+    #  app.run(ssl_context='adhoc')
 
 
 @app.route('/CxRestAPI/system/version')
