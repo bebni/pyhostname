@@ -4,10 +4,10 @@ from flask import Flask, make_response, send_file
 
 
 # Define SSL certificate and key file paths 
-#CERT_FILE = "/root/hostnamescript/pyhostname/certificate/cx-server/cert.pem" 
-#KEY_FILE = "/root/hostnamescript/pyhostname/certificate/cx-server/key.pem"
-CERT_FILE = "/root/hostnamescript/pyhostname/certificate/server_chain.pem" 
-KEY_FILE = "/root/hostnamescript/pyhostname/certificate/server.key"
+CERT_FILE = "/root/hostnamescript/pyhostname/certificate/cx-server/cert.pem" 
+KEY_FILE = "/root/hostnamescript/pyhostname/certificate/cx-server/key.pem"
+#CERT_FILE = "/root/hostnamescript/pyhostname/certificate/server_chain.pem" 
+#KEY_FILE = "/root/hostnamescript/pyhostname/certificate/server.key"
 
 # Create SSL context
 #import ssl context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
