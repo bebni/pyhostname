@@ -1,4 +1,5 @@
 from flask import Flask, make_response, send_file
+import ssl
 #from OpenSSL import SSL
 
 
@@ -14,7 +15,9 @@ KEY_FILE = "/root/hostnamescript/pyhostname/certificate/server.key"
 #context.use_certificate_file('server.crt')
 #context.load_cert_chain(CERT_FILE, KEY_FILE)
 
-context = (CERT_FILE, KEY_FILE)
+context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+context.load_cert_chain(CERT_FILE, KEY_FILE)
+#context = (CERT_FILE, KEY_FILE)
 
 app = Flask(__name__)
 
