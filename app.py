@@ -1,14 +1,17 @@
-from flask import Flask, make_response, send_file
+from flask import Flask, make_response, send_file, jsonify
 #import ssl
 #from OpenSSL import SSL
 
 
 # Define SSL certificate and key file paths 
-#CERT_FILE = "/root/hostnamescript/pyhostname/certificate/new/server.crt"
-#KEY_FILE = "/root/hostnamescript/pyhostname/certificate/new/server.key"
+CERT_FILE = "/root/hostnamescript/pyhostname/certificate/new/server.crt"
+KEY_FILE = "/root/hostnamescript/pyhostname/certificate/new/server.key"
 
-CERT_FILE = "/root/hostnamescript/pyhostname/certificate/server_chain.pem" 
-KEY_FILE = "/root/hostnamescript/pyhostname/certificate/server.key"
+#CERT_FILE = "./certificate/server_chain.pem" 
+#KEY_FILE = "./certificate/server.key"
+
+#CERT_FILE = "/root/hostnamescript/pyhostname/certificate/server_chain.pem" 
+#KEY_FILE = "/root/hostnamescript/pyhostname/certificate/server.key"
 
 #CERT_FILE = "/root/hostnamescript/pyhostname/cacert.pem" 
 #KEY_FILE = "/root/hostnamescript/pyhostname/cakey.pem"
@@ -198,4 +201,4 @@ def violations():
 if __name__ == '__main__':  
     #  app.run(host='127.0.0.1', debug=True, ssl_context=context)
        app.run('0.0.0.0', debug=True, port=5000, ssl_context=context)
-    #  app.run(ssl_context='adhoc')
+   

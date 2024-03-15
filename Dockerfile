@@ -12,5 +12,5 @@ RUN pip install -r requirements.txt
 EXPOSE 5000
 COPY . .
 HEALTHCHECK NONE
+CMD ["python", "app.py"]
 #CMD ["flask", "run"]
-CMD ["python","app.py"]
