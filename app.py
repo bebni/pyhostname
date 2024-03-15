@@ -4,8 +4,8 @@ from flask import Flask, make_response, send_file
 
 
 # Define SSL certificate and key file paths 
-CERT_FILE = "/root/hostnamescript/pyhostname/certificate/certtest.pem" 
-KEY_FILE = "/root/hostnamescript/pyhostname/certificate/certtestkey.pem"
+CERT_FILE = "/root/hostnamescript/pyhostname/certificate/new/server.crt"
+KEY_FILE = "/root/hostnamescript/pyhostname/certificate/new/server.key"
 
 #CERT_FILE = "/root/hostnamescript/pyhostname/certificate/server_chain.pem" 
 #KEY_FILE = "/root/hostnamescript/pyhostname/certificate/server.key"
@@ -200,5 +200,5 @@ def violations():
 
 if __name__ == '__main__':  
     #  app.run(host='127.0.0.1', debug=True, ssl_context=context)
-       app.run('0.0.0.0', debug=True, port=5000, ssl_context='adhoc')
+       app.run('0.0.0.0', debug=True, port=5000, ssl_context=context)
     #  app.run(ssl_context='adhoc')
