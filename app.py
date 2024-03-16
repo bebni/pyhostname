@@ -27,6 +27,7 @@ KEY_FILE = "/root/hostnamescript/pyhostname/certificate/new/server.key"
 context = (CERT_FILE, KEY_FILE)
 
 app = Flask(__name__)
+app.run('0.0.0.0', debug=True, port=5000, ssl_context="adhoc")
 #app.run('0.0.0.0', debug=True, port=5000, ssl_context=('/root/hostnamescript/pyhostname/certificate/new/server.crt', '/root/hostnamescript/pyhostname/certificate/new/server.key'))
 
 
@@ -198,7 +199,7 @@ def violations():
     }]
     """
 
-if __name__ == '__main__':  
+#if __name__ == '__main__':  
     #  app.run(host='127.0.0.1', debug=True, ssl_context=context)
-       app.run('0.0.0.0', debug=True, port=5000, ssl_context="adhoc")
+      # app.run('0.0.0.0', debug=True, port=5000, ssl_context="adhoc")
    
