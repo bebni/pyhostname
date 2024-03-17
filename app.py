@@ -27,7 +27,7 @@ from flask import Flask, make_response, send_file, jsonify
 #context = (CERT_FILE, KEY_FILE)
 
 app = Flask(__name__)
-app.run(host="0.0.0.0", port=50100, debug=True, ssl_context=('certificate.pem', 'privatekey.pem'))
+#app.run(host="0.0.0.0", port=50100, debug=True, ssl_context=('certificate.pem', 'privatekey.pem'))
 #app.run('0.0.0.0', debug=True, port=5000, ssl_context=('/root/hostnamescript/pyhostname/certificate/new/server.crt', '/root/hostnamescript/pyhostname/certificate/new/server.key'))
 
 
@@ -199,7 +199,7 @@ def violations():
     }]
     """
 
-#if __name__ == '__main__':  
+if __name__ == '__main__':  
     #  app.run(host='127.0.0.1', debug=True, ssl_context=context)
-      # app.run('0.0.0.0', debug=True, port=5000, ssl_context="adhoc")
+       app.run('0.0.0.0', debug=True, port=5000, ssl_context='adhoc')
    
