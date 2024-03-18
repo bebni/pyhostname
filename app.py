@@ -7,8 +7,8 @@ from flask import Flask, make_response, send_file, jsonify
 #CERT_FILE = "/root/hostnamescript/pyhostname/certificate/new/server.crt"
 #KEY_FILE = "/root/hostnamescript/pyhostname/certificate/new/server.key"
 
-#CERT_FILE = "./certificate/server_chain.pem" 
-#KEY_FILE = "./certificate/server.key"
+CERT_FILE = "./certificate/server_chain.pem" 
+KEY_FILE = "./certificate/server.key"
 
 #CERT_FILE = "/root/hostnamescript/pyhostname/certificate/server_chain.pem" 
 #KEY_FILE = "/root/hostnamescript/pyhostname/certificate/server.key"
@@ -24,7 +24,7 @@ from flask import Flask, make_response, send_file, jsonify
 
 #context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
 #context.load_cert_chain(CERT_FILE, KEY_FILE)
-#context = (CERT_FILE, KEY_FILE)
+context = (CERT_FILE, KEY_FILE)
 
 app = Flask(__name__)
 #app.run(host="0.0.0.0", port=50100, debug=True, ssl_context=('certificate.pem', 'privatekey.pem'))
@@ -200,6 +200,6 @@ def violations():
     """
 
 if __name__ == '__main__':  
-    #  app.run(host='127.0.0.1', debug=True, ssl_context=context)
-       app.run('0.0.0.0', debug=True, port=5000, ssl_context='adhoc')
+      app.run(host='127.0.0.1', debug=True, port=5000, ssl_context=context)
+      #app.run('0.0.0.0', debug=True, port=5000, ssl_context='adhoc')
    
