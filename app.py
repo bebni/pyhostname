@@ -13,8 +13,8 @@ from flask import Flask, make_response, send_file, jsonify
 #CERT_FILE = "/root/hostnamescript/pyhostname/certificate/server_chain.pem" 
 #KEY_FILE = "/root/hostnamescript/pyhostname/certificate/server.key"
 
-CERT_FILE = "/root/ssl/pyhostname/cacert.pem" 
-KEY_FILE = "/root/ssl/pyhostname/cakey.pem"
+CERT_FILE = "/root/ssl/pyhostname/cert1.pem" 
+KEY_FILE = "/root/ssl/pyhostname/key1.pem"
 
 # Create SSL context
 
