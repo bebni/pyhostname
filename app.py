@@ -13,21 +13,15 @@ from flask import Flask, make_response, send_file, jsonify
 #CERT_FILE = "/root/hostnamescript/pyhostname/certificate/server_chain.pem" 
 #KEY_FILE = "/root/hostnamescript/pyhostname/certificate/server.key"
 
-CERT_FILE = "/root/ssl/pyhostname/cacert.pem" 
-KEY_FILE = "/root/ssl/pyhostname/cakey.pem"
+#CERT_FILE = "/root/ssl/pyhostname/cacert.pem" 
+#KEY_FILE = "/root/ssl/pyhostname/cakey.pem"
 
 # Create SSL context
-#import ssl context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
-#context = SSL.Context(OpenSSL.SSL.SSLv23_METHOD)
-#context.use_certificate_file('server.crt')
-#context.load_cert_chain(CERT_FILE, KEY_FILE)
 
-#context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
-#context.load_cert_chain(CERT_FILE, KEY_FILE)
-context = (CERT_FILE, KEY_FILE)
+#context = (CERT_FILE, KEY_FILE)
 
 app = Flask(__name__)
-#app.run(host="0.0.0.0", port=50100, debug=True, ssl_context=('certificate.pem', 'privatekey.pem'))
+app.run(host="0.0.0.0", port=50100, debug=True, ssl_context=('certificate.pem', 'privatekey.pem'))
 #app.run('0.0.0.0', debug=True, port=5000, ssl_context=('/root/hostnamescript/pyhostname/certificate/new/server.crt', '/root/hostnamescript/pyhostname/certificate/new/server.key'))
 
 
@@ -199,7 +193,7 @@ def violations():
     }]
     """
 
-if __name__ == '__main__':  
-      app.run(host='127.0.0.1', debug=True, port=5000, ssl_context=context)
+#if __name__ == '__main__':  
+      #app.run(host='127.0.0.1', debug=True, port=5000, ssl_context=context)
       #app.run('0.0.0.0', debug=True, port=5000, ssl_context='adhoc')
    
