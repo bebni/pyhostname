@@ -4,8 +4,8 @@ from flask import Flask, make_response, send_file, jsonify
 
 
 # Define SSL certificate and key file paths 
-#CERT_FILE = "/root/hostnamescript/pyhostname/certificate/new/server.crt"
-#KEY_FILE = "/root/hostnamescript/pyhostname/certificate/new/server.key"
+#CERT_FILE = "/root/ssl/pyhostname/certificate/new/server.crt"
+#KEY_FILE = "/root/ssl/pyhostname/certificate/new/server.key"
 
 #CERT_FILE = "./certificate/server_chain.pem" 
 #KEY_FILE = "./certificate/server.key"
@@ -13,8 +13,8 @@ from flask import Flask, make_response, send_file, jsonify
 #CERT_FILE = "/root/hostnamescript/pyhostname/certificate/server_chain.pem" 
 #KEY_FILE = "/root/hostnamescript/pyhostname/certificate/server.key"
 
-CERT_FILE = "/root/hostnamescript/pyhostname/cacert.pem" 
-KEY_FILE = "/root/hostnamescript/pyhostname/cakey.pem"
+CERT_FILE = "/root/ssl/pyhostname/cacert.pem" 
+KEY_FILE = "/root/ssl/pyhostname/cakey.pem"
 
 # Create SSL context
 #import ssl context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
